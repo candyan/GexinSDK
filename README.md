@@ -1,4 +1,4 @@
 GexinSDK
 ========
 
-Gexin Geitui SDK
+个推 SDK
