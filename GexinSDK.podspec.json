@@ -1,6 +1,6 @@
 {
   "name": "GexinSDK",
-  "version": "1.2.0",
+  "version": "1.2.0.1",
   "summary": "Gexin SDK",
   "description": "个推 iOS SDK",
   "homepage": "http://www.igetui.com/usage/",
@@ -16,14 +16,15 @@
   },
   "source": {
     "git": "https://github.com/candyan/GexinSDK.git",
-    "tag": "1.2.0"
+    "tag": "1.2.0.1"
   },
   "source_files": "include/**/*.h",
   "vendored_libraries": "libGeTuiSdk-1.2.0.a",
   "frameworks": [
     "SystemConfiguration",
     "CFNetwork",
-    "Security"
+    "Security",
+    "AVFoundation"
   ],
   "libraries": [
     "z",
