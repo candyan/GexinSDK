@@ -20,14 +20,18 @@ typedef enum {
 
 #pragma mark 基本功能
 
-+ (void) startSdkWithAppId:(NSString *)appid appKey:(NSString*) appKey appSecret:(NSString*) appSecret
-        delegate:(id<GeTuiSdkDelegate>)delegate error:(NSError **)error; // 启动SDK
++ (void)startSdkWithAppId:(NSString *)appid appKey:(NSString *)appKey appSecret:(NSString *)appSecret
+                 delegate:(id<GeTuiSdkDelegate>)delegate
+                    error:(NSError **)error; // 启动SDK
 
-+ (void) enterBackground; // SDK进入后台
++ (void)enterBackground; // SDK进入后台
 
 + (void)registerDeviceToken:(NSString *)deviceToken; // 注册DeviceToken
 
 + (NSData *)retrivePayloadById:(NSString *)payloadId; //根据payloadId取回Payload
+
+#pragma mark 设置关闭推送模式
++ (void)setPushModeForOff:(BOOL)isValue;
 
 #pragma mark 绑定别名功能:后台可以根据别名进行推送
 + (void)bindAlias:(NSString *)alias;
@@ -40,11 +44,11 @@ typedef enum {
 + (NSString *)sendMessage:(NSData *)body error:(NSError **)error;
 
 #pragma mark 后台功能
-+ (void)runBackgroundEnable:(BOOL) isEnable;
++ (void)runBackgroundEnable:(BOOL)isEnable;
 + (void)resume;
 
 #pragma mark LBS功能
-+ (void) lbsLocationEnable:(BOOL)isEnable andUserVerify:(BOOL) isVerify;
++ (void)lbsLocationEnable:(BOOL)isEnable andUserVerify:(BOOL)isVerify;
 
 #pragma mark 获取SDK 版本号
 + (NSString *)version;
@@ -59,18 +63,19 @@ typedef enum {
 
 #pragma mark SDK Delegate
 @protocol GeTuiSdkDelegate <NSObject>
+
 @optional
 //SDK启动成功返回cid
-- (void) GeTuiSdkDidRegisterClient:(NSString *)clientId;
+- (void)GeTuiSdkDidRegisterClient:(NSString *)clientId;
 //SDK收到透传消息回调
-- (void) GeTuiSdkDidReceivePayload:(NSString *)payloadId andTaskId:(NSString*) taskId andMessageId:(NSString*)aMsgId fromApplication:(NSString *)appId;
+- (void)GeTuiSdkDidReceivePayload:(NSString *)payloadId andTaskId:(NSString *)taskId andMessageId:(NSString *)aMsgId fromApplication:(NSString *)appId;
 //SDK收到sendMessage消息回调
-- (void) GeTuiSdkDidSendMessage:(NSString *)messageId result:(int)result;
+- (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(int)result;
 //SDK遇到错误回调
-- (void) GeTuiSdkDidOccurError:(NSError *)error;
+- (void)GeTuiSdkDidOccurError:(NSError *)error;
 //SDK运行状态通知
-- (void) GeTuiSDkDidNotifySdkState:(SdkStatus)aStatus;
+- (void)GeTuiSDkDidNotifySdkState:(SdkStatus)aStatus;
+//SDK设置关闭推送功能回调
+- (void)GeTuiSdkDidSetPushMode:(BOOL)isModeOff error:(NSError *)error;
+
 @end
-
-
-
