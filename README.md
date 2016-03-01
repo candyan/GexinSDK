@@ -5,7 +5,7 @@ GetuiSDK(GexinSDK)
 
 ### Install
 
-使用 [Cocoapods-depend](https://github.com/candyan/cocoapods-depend) 插件
+使用 [CocoaPods-depend](https://github.com/candyan/cocoapods-depend) 插件
 
 ``` pod depend add GetuiSDK ```
 
