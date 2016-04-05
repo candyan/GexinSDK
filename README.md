@@ -17,6 +17,13 @@ GetuiSDK(GexinSDK)
 
 ###Changelog
 
+####1.4.1 (2016-03-21)
+
+- 修复若干已知bug，提升SDK稳定性;
+- 支持角标自增设置，增加setBadge和resetBadge接口;
+- 停用stopSdk、retrivePayloadById接口;
+- 修改接收透传消息回调接口;
+
 ####1.3.2（2015-12-28）
 - 修复若干bug，使SDK更加稳定
 
