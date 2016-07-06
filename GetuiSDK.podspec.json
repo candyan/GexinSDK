@@ -1,6 +1,6 @@
 {
   "name": "GetuiSDK",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "summary": "Getui SDK",
   "description": "个推 iOS SDK",
   "homepage": "http://www.igetui.com/usage/",
@@ -16,10 +16,10 @@
   },
   "source": {
     "git": "https://github.com/candyan/GexinSDK.git",
-    "tag": "1.4.2"
+    "tag": "1.4.3"
   },
   "source_files": "GeTuiSdk.h",
-  "vendored_libraries": "libGeTuiSdk-1.4.2.a",
+  "vendored_libraries": "libGeTuiSdk-1.4.3.a",
   "frameworks": [
     "SystemConfiguration",
     "CFNetwork",
