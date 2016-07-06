@@ -33,7 +33,8 @@
   ],
   "libraries": [
     "z",
-    "sqlite3"
+    "sqlite3",
+    "c++"
   ],
   "requires_arc": true
 }
